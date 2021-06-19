@@ -1,0 +1,9 @@
+<h1>アップデート</h1>
+<%= link_to "ファイル一覧", root_path, class: "link" %>
+<div id = "file-form-container">
+  <%= form_with model: @file, local: true do |f| %>
+    <%= f.text_field :name, class: "text-field", placeholder: "10文字以内" %>
+    <%= f.file_field :image_file, class: "file-field" %>
+    <%= f.submit "アップロード", class: "btn" %>
+  <% end %>
+</div>

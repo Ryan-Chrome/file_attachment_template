@@ -1,0 +1,12 @@
+<h1>ファイル一覧</h1>
+<%= link_to "アップロード", new_file_item_path, class: "link" %>
+<div id = "file-index-container">
+  <% @files.each do |file| %>
+    <div class = "file-content">
+      <i class="fas fa-file-alt"></i>
+      <span><%= file.name %></span>
+      <%= button_to "Download", file_download_path(file), method: :get, class: "download-link" %>
+      <%= link_to "削除", file_item_path(file), method: :delete, class: "delete-link" %>
+    </div>
+  <% end %>
+</div>
